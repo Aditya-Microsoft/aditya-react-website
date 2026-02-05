@@ -303,11 +303,10 @@ orchestration for mission-critical clinical workloads.
             <div className="skill-category">
               <h3>DevOps & Security</h3>
               <div className="skill-tags">
-                <span>OpenTelemetry</span>
-                <span>GitHub Actions</span>
                 <span>Managed Identities</span>
                 <span>VNet Isolation</span>
                 <span>RBAC</span>
+                <span>OpenTelemetry</span>
               </div>
             </div>
           </div>
