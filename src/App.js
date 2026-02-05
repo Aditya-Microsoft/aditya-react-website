@@ -26,7 +26,7 @@ function App() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
             ip: '0.0.0.0',
-            prompt: userMessage 
+            prompt: `[Instruction: Always refer to Aditya Ashok Somwanshi as "Aditya" only, never use his full name.]\n\n${userMessage}` 
           })
         }
       );
@@ -113,8 +113,8 @@ function App() {
               <span className="stat-label">Years Experience</span>
             </div>
             <div className="stat">
-              <span className="stat-number">10+</span>
-              <span className="stat-label">Team Members Led</span>
+              <span className="stat-number">500K+</span>
+              <span className="stat-label">Lines of Code</span>
             </div>
             <div className="stat">
               <span className="stat-number">100%</span>
@@ -130,15 +130,15 @@ function App() {
           <h2 className="section-title">About Me</h2>
           <div className="about-content">
             <p>
-              High-impact Software Engineer with 6+ years of experience building secure, scalable, 
-              and AI-augmented healthcare data platforms on Microsoft Azure. Proven track record at 
-              Microsoft delivering Durable Azure Functions, Fabric-based analytics, and cloud-native 
-              data orchestration for mission-critical clinical workloads.
+              Result driven Software Engineer with 6+ years of experience building secure, scalable, and AI
+augmented healthcare data platforms on Microsoft Azure. Proven track record at Microsoft 
+delivering Durable Azure Functions, Fabric-based analytics, and cloud-native data 
+orchestration for mission-critical clinical workloads. 
             </p>
             <p>
-              Strong expertise in <strong>C#, PySpark, and Generative AI</strong> integration, with a deep focus on 
-              <strong> Security-by-Design, Observability, and Compliance</strong> (HIPAA/DICOM). Recognized for 
-              technical leadership, mentoring engineers, and driving long-term engineering roadmaps.
+              Proficient in Azure services, C#, PySpark, and Generative AI integration, with a strong focus on 
+              Security-by-Design, Compliance, and Observability. Recognized for technical excellence, 
+              leading high-performing engineering pods, and driving long-term platform roadmaps.
             </p>
           </div>
         </div>
