@@ -3,6 +3,51 @@ import './App.css';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
+  const [isChatOpen, setIsChatOpen] = useState(true);
+  const [chatMessages, setChatMessages] = useState([
+    { type: 'bot', text: "Hi! 👋 I'm Aditya's AI assistant. Ask me anything about his experience, skills, or projects!" }
+  ]);
+  const [inputMessage, setInputMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSendMessage = async () => {
+    if (!inputMessage.trim()) return;
+
+    const userMessage = inputMessage.trim();
+    setChatMessages(prev => [...prev, { type: 'user', text: userMessage }]);
+    setInputMessage('');
+    setIsLoading(true);
+
+    // TODO: Replace with actual API call
+    // Example:
+    // try {
+    //   const response = await fetch('/api/chat', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ message: userMessage })
+    //   });
+    //   const data = await response.json();
+    //   setChatMessages(prev => [...prev, { type: 'bot', text: data.reply }]);
+    // } catch (error) {
+    //   setChatMessages(prev => [...prev, { type: 'bot', text: 'Sorry, something went wrong.' }]);
+    // }
+
+    // Placeholder response
+    setTimeout(() => {
+      setChatMessages(prev => [...prev, { 
+        type: 'bot', 
+        text: "Thanks for your question! This chat will be connected to an AI backend soon. Stay tuned! 🚀" 
+      }]);
+      setIsLoading(false);
+    }, 1000);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
@@ -288,6 +333,70 @@ function App() {
       <footer className="footer">
         <p>© 2026 Aditya Somwanshi. Built with React.</p>
       </footer>
+
+      {/* Chat Widget */}
+      <div className={`chat-widget ${isChatOpen ? 'open' : ''}`}>
+        {/* Chat Toggle Button */}
+        <button 
+          className="chat-toggle"
+          onClick={() => setIsChatOpen(!isChatOpen)}
+          aria-label="Toggle chat"
+        >
+          {isChatOpen ? (
+            <span className="chat-icon">✕</span>
+          ) : (
+            <span className="chat-icon">💬</span>
+          )}
+        </button>
+
+        {/* Chat Panel */}
+        <div className="chat-panel">
+          <div className="chat-header">
+            <div className="chat-header-info">
+              <span className="chat-avatar">🤖</span>
+              <div>
+                <h4>Ask about Aditya</h4>
+                <span className="chat-status">AI Assistant</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="chat-messages">
+            {chatMessages.map((msg, index) => (
+              <div key={index} className={`chat-message ${msg.type}`}>
+                {msg.type === 'bot' && <span className="message-avatar">🤖</span>}
+                <div className="message-bubble">{msg.text}</div>
+              </div>
+            ))}
+            {isLoading && (
+              <div className="chat-message bot">
+                <span className="message-avatar">🤖</span>
+                <div className="message-bubble typing">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="chat-input-container">
+            <input
+              type="text"
+              className="chat-input"
+              placeholder="Ask me anything about Aditya..."
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              onKeyPress={handleKeyPress}
+            />
+            <button 
+              className="chat-send"
+              onClick={handleSendMessage}
+              disabled={!inputMessage.trim() || isLoading}
+            >
+              ➤
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
