@@ -18,28 +18,36 @@ function App() {
     setInputMessage('');
     setIsLoading(true);
 
-    // TODO: Replace with actual API call
-    // Example:
-    // try {
-    //   const response = await fetch('/api/chat', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ message: userMessage })
-    //   });
-    //   const data = await response.json();
-    //   setChatMessages(prev => [...prev, { type: 'bot', text: data.reply }]);
-    // } catch (error) {
-    //   setChatMessages(prev => [...prev, { type: 'bot', text: 'Sorry, something went wrong.' }]);
-    // }
-
-    // Placeholder response
-    setTimeout(() => {
+    try {
+      const response = await fetch(
+        'https://aditya-cv-api.azurewebsites.net/api/Function1?code=A7-D9RLOcRAZx5Wfsxe80p-usZDNZdcJIclXxCxR1LrSAzFupJRK3g%3D%3D',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            ip: '0.0.0.0',
+            prompt: userMessage 
+          })
+        }
+      );
+      
+      if (!response.ok) {
+        throw new Error('API request failed');
+      }
+      
+      const data = await response.json();
+      setChatMessages(prev => [...prev, { type: 'bot', text: data.response }]);
+    } catch (error) {
+      console.error('Chat API error:', error);
+      console.error('Error name:', error.name);
+      console.error('Error message:', error.message);
       setChatMessages(prev => [...prev, { 
         type: 'bot', 
-        text: "Thanks for your question! This chat will be connected to an AI backend soon. Stay tuned! 🚀" 
+        text: `Error: ${error.message}. Check browser console for details.` 
       }]);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const handleKeyPress = (e) => {
