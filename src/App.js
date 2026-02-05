@@ -159,11 +159,13 @@ orchestration for mission-critical clinical workloads.
                 </div>
                 <p className="focus">Focus: Scalable Orchestration, Healthcare Data Security, AI Enablement</p>
                 <ul>
-                  <li>Architected high-concurrency Durable Azure Functions (C#) to orchestrate petabyte-scale healthcare data pipelines, reducing execution latency by 40%</li>
-                  <li>Led a 10-member engineering pod in an Agile setup, owning end-to-end delivery from requirements to production</li>
-                  <li>Designed secure-by-default cloud platforms using VNets, Private Endpoints, RBAC, achieving 100% compliance</li>
-                  <li>Modernized analytics with Microsoft Fabric + Azure Synapse, cutting dashboard refresh times by 60%</li>
-                  <li>Introduced Generative AI workflows using Azure OpenAI for pipeline monitoring and ChatOps</li>
+                  <li>Led end-to-end design and development of high-concurrency Durable & HTTP-triggered Azure Functions (C#) orchestrating petabyte-scale healthcare data pipelines, reducing execution latency</li>
+                  <li>Owned the full software development lifecycle, from requirement clarification with product owners to design, implementation, release, and live-site availability of diagnostic services</li>
+                  <li>Designed secure-by-design, network-isolated platforms using VNets, Private Endpoints, Managed Identities, and RBAC, ensuring 100% compliance with company's security and privacy standards</li>
+                  <li>Modernized analytics architecture by integrating Microsoft Fabric with Azure Synapse and Power BI, cutting dashboard refresh times by 60% and improving operational visibility</li>
+                  <li>Implemented observability and reliability standards using OpenTelemetry, structured logging, and distributed tracing, improving debuggability of highly concurrent systems</li>
+                  <li>Served as Scrum lead for a 10-member engineering pod, planning and tracking sprints, coordinating task execution, and contributing to architectural discussions and engineering best practices, while being the youngest member of the team</li>
+                  <li>Prototyped Generative AI integrations using Azure OpenAI during an internal hackathon, exploring ChatOps-style workflows and AI-assisted interactions for healthcare data platform</li>
                 </ul>
               </div>
             </div>
@@ -178,9 +180,11 @@ orchestration for mission-critical clinical workloads.
                 </div>
                 <p className="focus">Focus: Data Transformation, Large-Scale Processing</p>
                 <ul>
-                  <li>Designed multi-source ETL pipelines using Azure Data Factory and Synapse Spark, improving data availability by 30%</li>
-                  <li>Built scalable PySpark notebooks following Clean Architecture principles</li>
-                  <li>Developed Python-based automated data validation framework to detect schema drift</li>
+                  <li>Designed and implemented multi-source ETL pipelines using Azure Data Factory and Synapse Spark, improving data availability and reliability for downstream analytics by ~30%</li>
+                  <li>Built scalable PySpark notebooks on Synapse Spark clusters, processing large healthcare datasets while following Clean Architecture and modular design principles</li>
+                  <li>Designed SQL schemas and optimized data models to support performance analytical workloads and executive reporting</li>
+                  <li>Developed a Python-based automated data validation framework, integrated with ADF pipelines to detect schema drift, data quality issues, and pipeline regressions before production impact</li>
+                  <li>Delivered Power BI dashboards consumed by business and leadership teams, enabling faster insights and data-driven decision-making</li>
                 </ul>
               </div>
             </div>
@@ -194,9 +198,11 @@ orchestration for mission-critical clinical workloads.
                   <span className="period">Jun 2019 – Apr 2022</span>
                 </div>
                 <ul>
-                  <li>Delivered end-to-end data integrations between Dynamics 365 and Azure SQL</li>
-                  <li>Built reliable ingestion and transformation workflows for real-time and batch analytics</li>
-                  <li>Gained strong hands-on experience across Azure data services</li>
+                  <li>Built end-to-end data integrations using Azure Data Factory between Dynamics 365, Azure SQL, Blob Storage, and QuickBooks, supporting finance and CRM reporting workflows</li>
+                  <li>Implemented full-load and delta-load pipelines to enable reliable real-time and batch data synchronization across enterprise systems</li>
+                  <li>Developed ingestion and transformation workflows with a strong focus on data consistency, failure handling, and reprocessing</li>
+                  <li>Delivered Power BI dashboards for business stakeholders, enabling improved visibility into operational and financial metrics</li>
+                  <li>Gained strong hands-on experience across Azure data services, enterprise integrations, and production data pipelines</li>
                 </ul>
               </div>
             </div>
@@ -211,47 +217,46 @@ orchestration for mission-critical clinical workloads.
           <div className="projects-grid">
             <div className="project-card">
               <div className="project-icon">🛡️</div>
-              <h3>DICOM Guard</h3>
+              <h3>DICOMGuard</h3>
               <p className="project-role">Lead Architect</p>
               <p>
-                AI-powered healthcare security solution to automatically detect and redact PII/PHI 
-                from medical imaging. Leveraged Azure AI Search and Cognitive Services for 
-                HIPAA-compliant DICOM data processing at scale.
+                Hackathon-winning solution for secure handling of DICOM medical images. Built a web service using Python, Flask, Azure, and OpenAI that automatically de-identifies PII from DICOM tags and images using ML algorithms including NLP and image recognition, while supporting re-identification when needed. Ensures privacy-compliant data sharing for medical professionals and researchers.
               </p>
               <div className="project-tags">
-                <span>Azure AI</span>
+                <span>Python</span>
+                <span>Flask</span>
+                <span>Azure</span>
+                <span>OpenAI</span>
                 <span>Healthcare</span>
-                <span>Security</span>
               </div>
             </div>
 
             <div className="project-card">
-              <div className="project-icon">🤖</div>
-              <h3>ChatOps for DataOps</h3>
-              <p className="project-role">Creator & Lead Developer</p>
+              <div className="project-icon">🩺</div>
+              <h3>Medvisor</h3>
+              <p className="project-role">Creator & Developer</p>
               <p>
-                Built a conversational interface using Azure OpenAI and Logic Apps, enabling 
-                on-call engineers to query pipeline health and failures using natural language.
+                Smart solution connecting General Physicians and Medical Consultants with qualified Medical Specialists for expert guidance on patient care and diagnosis. Empowers doctors to find the most experienced specialists who can offer advice and support based on current prognosis.
               </p>
               <div className="project-tags">
-                <span>Azure OpenAI</span>
-                <span>Logic Apps</span>
-                <span>ChatOps</span>
+                <span>Healthcare</span>
+                <span>Telehealth</span>
+                <span>Azure</span>
               </div>
             </div>
 
             <div className="project-card">
-              <div className="project-icon">📊</div>
-              <h3>Real-time Analytics Platform</h3>
-              <p className="project-role">Technical Lead</p>
+              <div className="project-icon">🔗</div>
+              <h3>Secure Health Bridge</h3>
+              <p className="project-role">Solution Architect</p>
               <p>
-                Modernized analytics architecture by integrating Microsoft Fabric with Azure Synapse, 
-                enabling near real-time diagnostic insights for healthcare providers.
+                Edge Connector utilizing Azure Arc to securely transfer healthcare data including DIMSE (DICOM) images and SQL database records from on-premises systems to Azure Fabric Data Lake. Handles large volumes of sensitive medical data while ensuring security and compliance with healthcare regulations.
               </p>
               <div className="project-tags">
-                <span>Microsoft Fabric</span>
-                <span>Synapse</span>
-                <span>Analytics</span>
+                <span>Azure Arc</span>
+                <span>DICOM</span>
+                <span>Data Lake</span>
+                <span>Healthcare</span>
               </div>
             </div>
           </div>
