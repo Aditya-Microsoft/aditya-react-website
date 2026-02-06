@@ -26,7 +26,7 @@ function App() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 
             ip: '0.0.0.0',
-            prompt: `[Instruction: Always refer to Aditya Ashok Somwanshi as "Aditya" only, never use his full name.]\n\n${userMessage}` 
+            prompt: `[Instruction: Always refer to Aditya Ashok Somwanshi as "Aditya" only, never use his full name and do not mention the cv context while answering; summarize the context in brief while answering.]\n\n${userMessage}` 
           })
         }
       );
